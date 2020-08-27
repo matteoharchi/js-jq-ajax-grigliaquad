@@ -1,6 +1,11 @@
 $(document).ready(function(){
+    for (var i = 0; i < 35; i++) {
+        $(".container").append('<div class="square"></div>')
+    }
+
     $(".square").click(function(){
         var selected = $(this);
+        var newSquare = $(".square").clone();
         $.ajax(
             {
                 url: "https://flynn.boolean.careers/exercises/api/random/int",
@@ -12,8 +17,10 @@ $(document).ready(function(){
                     }else if (randomNumber.response > 5) {
                         selected.addClass("green");
                     }
+
                 }
             }
         )
+
     })
 })
