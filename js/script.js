@@ -13,8 +13,10 @@ $(document).ready(function(){
                 success: function(randomNumber){
                     $(selected).text(randomNumber.response);
                     if (randomNumber.response <= 5) {
+                        selected.removeClass("green");
                         selected.addClass("yellow");
                     }else if (randomNumber.response > 5) {
+                        selected.removeClass("yellow");
                         selected.addClass("green");
                     }
 
